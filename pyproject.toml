@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "yolov4-test"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "=3.9"
+opencv-contrib-python = "^4.5.5"
+tensorflow = "^2.8.0"
+
+[tool.poetry.dev-dependencies]
+pysen = {version = "0.10.1", extras = ["lint"]}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pysen]
+version = "0.10"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = false
+mypy_preset = "strict"
+line_length = 88
+py_version = "py38"
+[[tool.pysen.lint.mypy_targets]]
+  paths = ["."]
